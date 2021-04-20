@@ -124,7 +124,15 @@ cqs <- function(x, y, tau = 0.5, dtau = NULL) {
   d <- d_hat
 
   # define the bandwidth and estimate the conditional quantile
-  h <- 2 * sd(y) * n^ (-1 / (d + 4))
+  red_dim <- floor(0.2 * n) # find how many observations correspond to a 20%
+  index_y <- order(y)[red_dim:(n - red_dim)] # subtract the smallest 20% and the largest 20% of the observations
+  h <- KernSmooth::dpill(newx[index_y, ], y[index_y])
+  h <- h * (tau * (1 - tau) / (dnorm(qnorm(tau)))^2)^.2
+  if (h == 'NaN') {
+    h <- 1.25 * max(n^(-1 / (d + 4)), min(2, sd(y)) * n^(- 1 / (d + 4)))
+  } else {
+    h <- 1.25 * max(n^(-1 / (d + 4)), min(2, sd(y)) * n^(- 1 / (d + 4)), h) # maximum of all bandwidths
+  }
   non_par <- llqr(newx, y, tau = tau, h = h)
   qhat <- non_par$ll_est
 
