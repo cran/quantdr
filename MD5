@@ -1,6 +1,6 @@
-006fc0c17d01d78f859c129fc4e720b6 *DESCRIPTION
+4d9c629048005c378df8d5d7bc23857e *DESCRIPTION
 5e5d4bce033f5b9372c618645bc8c617 *NAMESPACE
-29683a98917fd89cec04ca0b63001a34 *NEWS.md
+29e75eb9b77eff4eb6921fb705318a7e *NEWS.md
 6d89419f20a72c14b0f07fd1b02cdca9 *R/ValAR.R
 707f4439eae45b2027ea61162eb912f5 *R/bic_d.R
 a401ea0deff25a547d09392d60b20c9f *R/cqs.R
@@ -10,7 +10,7 @@ c5e6b4601651d9c747681541a6f9ae56 *R/llqrcv.R
 372c520b94b1a9970bc60b4cfade607f *build/vignette.rds
 a585568c4c1e6e89fdb1399e8ecb6125 *inst/doc/quantdr.R
 6a3314ab7c3fb9bb05a24c2b2e088bf0 *inst/doc/quantdr.Rmd
-288f2d086df01badc82c936147892c6c *inst/doc/quantdr.html
+409f058e08702957a4fca550e6086b18 *inst/doc/quantdr.html
 ce9b97400e278cb44b15360d03bb8e2c *man/ValAR.Rd
 267906682936441d049b6af3cd302d71 *man/cqs.Rd
 7a0a5f72cc3521ebe435d4dc449c74e8 *man/figures/README-example-1.png
