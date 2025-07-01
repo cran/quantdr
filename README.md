@@ -4,13 +4,12 @@
 # quantdr
 
 <!-- badges: start -->
-
-[![Travis build
-status](https://travis-ci.org/elianachristou/quantdr.svg?branch=master)](https://travis-ci.org/elianachristou/quantdr)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/elianachristou/quantdr?branch=master&svg=true)](https://ci.appveyor.com/project/elianachristou/quantdr)
+<!--  [![Build Status](https://app.travis-ci.com/elianachristou/quantdr.svg?branch=main)](https://app.travis-ci.com/elianachristou/quantdr) -->
+<!-- [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/elianachristou/quantdr?branch=master&svg=true)](https://ci.appveyor.com/project/elianachristou/quantdr) -->
 
 [![](https://cranlogs.r-pkg.org/badges/quantdr)](https://cran.r-project.org/package=quantdr)
+
+[![R-CMD-check](https://github.com/elianachristou/quantdr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/elianachristou/quantdr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # quantdr: Dimension Reduction Techniques for Conditional Quantiles
@@ -27,6 +26,22 @@ directions of the central quantile subspace. Once the directions are
 determined, one can form the new sufficient predictors and estimate the
 conditional quantile function using `llqr`.
 
+## Note: Vendored Code from the `dr` Package
+
+The `quantdr` package includes internal code adapted from the `dr`
+package by [Cook, R. D., & Ni, L. (2005) Sufficient Dimension Reduction
+via Inverse Regression: A Minimum Discrepancy Approach. *Journal of the
+American Statistical Association*, 100(470),
+410–428](https://www.tandfonline.com/doi/abs/10.1198/016214504000001501),
+which is no longer maintained on CRAN.
+
+The original `dr` package implemented sufficient dimension reduction
+methods. We have included any set of essential functions to support the
+core functionality of `quantdr`.
+
+All vendored code has been updated and integrated under the internal
+namespace of `quantdr`.
+
 ## Installation
 
 You can install the released version of quantdr from
@@ -36,8 +51,7 @@ You can install the released version of quantdr from
 install.packages("quantdr") 
 ```
 
-and the development version from [GitHub](https://github.com/)
-with:
+and the development version from [GitHub](https://github.com/) with:
 
 <!-- You can install the development version of quantdr from [GitHub](https://github.com/) with:  -->
 

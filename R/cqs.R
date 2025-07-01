@@ -30,7 +30,6 @@
 #'
 #' @return \code{cqs} computes the directions of the central quantile subspace
 #'   and returns:
-#'   \itemize{
 #'   \item{qvectors: }{The estimated directions of the
 #'   \eqn{\tau}th central quantile subspace.}
 #'
@@ -46,13 +45,14 @@
 #'   estimate the structural dimension and is not necessarily a perfect one. The
 #'   user has the option to use the eigenvalues \code{qvalues} on other
 #'   criteria, like cross-validation, and determine the estimated dimension of
-#'   the subspace.}}
+#'   the subspace.}
 #'
 #' @references Zhu, L.-P., Zhu, L.-X., Feng, Z.-H. (2010) Dimension reduction in
 #'   regression through cumulative slicing estimation. \emph{Journal of the
 #'   American Statistical Association}, 105, 1455-1466.
 #' @include llqr.R
 #' @include bic_d.R
+#' @include dr.R
 #'
 #' @examples
 #' # estimate the directions of a single-index model
@@ -119,7 +119,7 @@ cqs <- function(x, y, tau = 0.5, dtau = NULL) {
 
   # use SIR for initial dimension reduction
   # use bic_d to estimate d, the dimension of the central subspace
-  output <- dr::dr(y ~ xstand)
+  output <- dr(y ~ xstand)
   lambdas <- output$evalues
   d_hat <- bic_d(lambdas, n)
   ahat <- cbind(output$evectors[, 1:d_hat])
